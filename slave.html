@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slave Page</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/app.js"></script>
+
+</head>
+<body onload="init()">
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+    <a class="navbar-brand" href="#">
+        Broadcast channel API - Slave Page
+    </a>
+</nav>
+<div class="container">
+
+    <div class="row">
+        <div class="col-6">
+            <h1>Send Message</h1>
+            <div class="form-group">
+                <label for="msg">Message:</label>
+                <input type="text" class="form-control" id="msg" name="message">
+            </div>
+            <button type="submit" class="btn btn-outline-secondary" onclick="sendEventAsSlave()">Send Message</button>
+
+        </div>
+
+        <div class="col-6">
+            <h2>Logging : </h2>
+            <div class="log-box bg-dark text-white" id="log-box">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

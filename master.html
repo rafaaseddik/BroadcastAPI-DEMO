@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>Broadcast Channel Master</title>
+		<script type="text/javascript">
+			var channel = new BroadcastChannel("private_channel")
+			function init(){
+				channel.onmessage = function(event){
+					console.log(event);
+				}
+			}
+			function sendEvent(){
+				var text = document.getElementsByName('input')[0].value;
+				channel.postMessage(text)
+			}
+		</script>
+	</head>
+	<body onload="init()">
+		<input name="input" placeholder="Value to send"/>
+		<button onclick="sendEvent()">Send Event</button>
+		<button>Open new window</button>
+		<a href="slave.html" target="_blank"><button>Open new tab</button></a>
+		<button>Show Iframe </button>
+		<iframe src="master.html"></iframe>
+	</body>
+</html>

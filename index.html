@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Master Page</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/app.js"></script>
+
+</head>
+<body onload="init()">
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+    <a class="navbar-brand" href="#">
+        Broadcast channel API - Master Page
+    </a>
+</nav>
+<div class="container">
+
+    <div class="row">
+        <div class="col-6">
+            <h1>Send Message</h1>
+            <div class="form-group">
+                <label for="msg">Message:</label>
+                <input type="text" class="form-control" id="msg" name="message">
+            </div>
+            <button type="submit" class="btn btn-outline-secondary" onclick="sendEventAsMaster()">Send Message</button>
+
+        </div>
+        <div class="col-6">
+            <h1>Actions</h1>
+            <a href="slave.html" target="_blank"><button class="btn btn-outline-secondary btn-full-width">Create Slave : New tab</button></a>
+            <button class="btn btn-outline-secondary btn-full-width" onclick="window.open('slave.html',
+                         'newwindow',
+                         'width=800,height=600');
+              return false;">Create Slave : New window</button>
+            <button class="btn btn-outline-secondary btn-full-width" onclick="openIframe()">Create Slave : New iFrame</button>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-6">
+            <h2>Logging : </h2>
+            <div class="log-box bg-dark text-white" id="log-box">
+            </div>
+        </div>
+        <div class="col-6">
+            <h2>iFrame Slave : </h2>
+            <iframe class="slave-frame" id="slave-frame"></iframe>
+            <div class="iFrame-placeholder bg-secondary text-white" id="placeholder-frame">
+                <span class="align-middle">Press <b>"Create Slave : New iFrame"</b> to create iFrame here</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
